@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.site-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.site-header h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.site-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 16px;
+}
+
+.center-card {
+  text-align: center;
+  padding: 36px 20px;
+}
+
+.primary-button,
+.secondary-button,
+.text-button,
+.choice-button {
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  background: #2563eb;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+}
+
+.primary-button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: #e5e7eb;
+  color: #111827;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.secondary-button:hover {
+  background: #d1d5db;
+}
+
+.text-button {
+  background: transparent;
+  color: #2563eb;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.mode-button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0 12px;
+}
+
+.quiz-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.quiz-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+#question-title {
+  margin: 14px 0 0;
+}
+
+.question-image-card {
+  text-align: center;
+}
+
+#question-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.choice-card h3 {
+  margin-top: 0;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.choice-button {
+  background: #f3f4f6;
+  color: #111827;
+  padding: 14px 8px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.choice-button:hover {
+  background: #e5e7eb;
+}
+
+.choice-button.selected {
+  background: #dbeafe;
+  border-color: #2563eb;
+  color: #1d4ed8;
+}
+
+.navigation-card {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.result-summary p {
+  margin: 8px 0;
+  font-size: 1.05rem;
+}
+
+.explanation-item {
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 0;
+}
+
+.explanation-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.explanation-item h3 {
+  margin: 0 0 8px;
+}
+
+.user-answer {
+  font-weight: 700;
+}
+
+.answer-correct {
+  color: #059669;
+  font-weight: 700;
+}
+
+.answer-wrong {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.explanation-list {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.explanation-list li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.result-question-image {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 12px 0 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 16px 12px 40px;
+  }
+
+  .site-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navigation-card {
+    flex-direction: column;
+  }
+
+  .navigation-card button {
+    width: 100%;
+  }
+
+  .mode-button-group {
+    flex-direction: column;
+  }
+
+  .mode-button-group button {
+    width: 100%;
+  }
+}
