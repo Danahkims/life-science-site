@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>생명과학 문제 풀이 사이트</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="site-header">
+      <h1>생명과학 문제 풀이</h1>
+      <p>2점 / 3점 문제를 선택해서 풀어보세요.</p>
+    </header>
+
+    <main>
+      <!-- 시작 화면 -->
+      <section id="start-screen" class="screen active">
+        <div class="card center-card">
+          <h2>문제 풀이 시작</h2>
+          <p>문제 이미지를 보고 1번부터 5번까지 답을 고르세요.</p>
+          <button id="start-button" class="primary-button">문제 풀러가기</button>
+        </div>
+      </section>
+
+      <!-- 유형 선택 화면 -->
+      <section id="mode-screen" class="screen">
+        <div class="card center-card">
+          <h2>문제 유형 선택</h2>
+          <div class="mode-button-group">
+            <button id="select-2point" class="primary-button">2점 문제 풀기</button>
+            <button id="select-3point" class="secondary-button">3점 문제 풀기</button>
+          </div>
+          <button id="back-to-start" class="text-button">처음으로</button>
+        </div>
+      </section>
+
+      <!-- 문제 풀이 화면 -->
+      <section id="quiz-screen" class="screen">
+        <div class="quiz-layout">
+          <div class="quiz-top card">
+            <div class="quiz-top-row">
+              <span id="quiz-type-badge" class="badge">2점</span>
+              <span id="progress-text">1 / 12</span>
+            </div>
+            <h2 id="question-title">1번 문제</h2>
+          </div>
+
+          <div class="question-image-card card">
+            <img id="question-image" src="" alt="문제 이미지" />
+          </div>
+
+          <div class="choice-card card">
+            <h3>답을 선택하세요</h3>
+            <div id="choice-buttons" class="choice-grid">
+              <button class="choice-button" data-choice="1">1번</button>
+              <button class="choice-button" data-choice="2">2번</button>
+              <button class="choice-button" data-choice="3">3번</button>
+              <button class="choice-button" data-choice="4">4번</button>
+              <button class="choice-button" data-choice="5">5번</button>
+            </div>
+          </div>
+
+          <div class="navigation-card card">
+            <button id="prev-button" class="secondary-button">이전 문제</button>
+            <button id="next-button" class="primary-button" disabled>다음 문제</button>
+            <button id="finish-button" class="primary-button hidden">채점 및 해설 보러가기</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 결과 / 해설 화면 -->
+      <section id="result-screen" class="screen">
+        <div class="card result-summary">
+          <h2>채점 결과</h2>
+          <p id="score-text">점수: 0점</p>
+          <p id="correct-text">정답 수: 0개</p>
+          <p id="wrong-text">오답 수: 0개</p>
+          <button id="restart-button" class="primary-button">다시 풀기</button>
+        </div>
+
+        <div class="card explanation-card">
+          <h2>문제별 해설</h2>
+          <div id="explanations-container"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
