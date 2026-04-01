@@ -184,13 +184,11 @@ function calculateResult() {
 
   const totalCount = problems.length;
   const wrongCount = totalCount - correctCount;
-  const score = Math.round((correctCount / totalCount) * 100);
 
   return {
     totalCount,
     correctCount,
-    wrongCount,
-    score
+    wrongCount
   };
 }
 
@@ -198,7 +196,7 @@ function renderResults() {
   const problems = getCurrentProblems();
   const result = calculateResult();
 
-  scoreText.textContent = `점수: ${result.score}점`;
+  scoreText.textContent = `총 문항 수: ${result.totalCount}개`;
   correctText.textContent = `정답 수: ${result.correctCount}개 / ${result.totalCount}개`;
   wrongText.textContent = `오답 수: ${result.wrongCount}개`;
 
